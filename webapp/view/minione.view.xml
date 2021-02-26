@@ -1,0 +1,234 @@
+<mvc:View controllerName="zmini_1.controller.minione" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout"  xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+		<SplitApp id="SplitApp" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
+			<detailPages>
+			<Page id="detail" title="Detail 1" class="sapUiStdPage">
+				<content>
+			<ObjectHeader 
+			title="Notification Number" 
+			>
+				
+                              <!--<statuses>-->
+                                              
+                              <!--</statuses>-->
+                              <attributes  >
+                              
+                                             <!--<ObjectAttribute title="Description" text="{products>Planner Group}"/>-->
+                                            
+                              </attributes>
+                              
+                </ObjectHeader>
+							<f:SimpleForm 
+								id="myproducts"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+				labelSpanL="4"
+		labelSpanM="4"
+			singleContainerFullSize="false" 
+			binding="{products>/Products}"
+			>
+					<f:content  id="ls_22" binding="{products>/Products}">
+				<Label text="Description"></Label>
+					<Text text="{products>Description}" />
+						<Label text="Functional Location"></Label>
+					<Text text="{products>Functional Location}" />
+						<Label text="Functional Location Description "></Label>
+					<Text text="{products>Functional Location Description}" />
+						<Label text="Equpiment Description"></Label>
+					<Text text="{products>Equpiment Description}" />
+						<Label text="Assembly Description"></Label>
+					<Text text="{products>Assembly Description}" />
+						<Label text="User Status"></Label>
+					<Text text="{products>Functional Location}" />
+					
+				</f:content>
+		</f:SimpleForm>	
+						<IconTabBar
+		id="idIconTabBarMulti"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				icon="sap-icon://text"
+				text="Long Text">
+			<content>
+				 <TextArea placeholder="Enter Text" growing="true" growingMaxLines="10" width="100%" />
+				 <!--<TextArea placeholder="Enter Text" growing="true" growingMaxLines="10" width="100%"  icon="sap-icon://notes" />-->
+					
+			</content>
+				<ToolbarSpacer />
+			
+			</IconTabFilter>
+			
+			<IconTabFilter
+				icon="sap-icon://past"
+				text="Responsibilities"
+				count="3">
+				<f:SimpleForm 
+				id="myproductss"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+				labelSpanL="4"
+		labelSpanM="4"
+			singleContainerFullSize="false" 
+			binding="{products>/Products}"
+			>
+					<f:content  id="ls_00" binding="{products>/Products}">
+				<Label text="Planner Group"></Label>
+					<Text text="{products>Planner Group}" />
+						<Label text="MAintainance Planning Plant"></Label>
+					<Text text="{products>MAintainance Planning Plant}" />
+						<Label text="Main Work Centre"></Label>
+					<Text text="{products>Main Work Centre}" />
+						<Label text="Plant"></Label>
+					<Text text="{products>Plant}" />
+						<Label text="Person Responsible"></Label>
+					<Text text="{products>Person Responsible}" />
+						<Label text="Reportd By"></Label>
+					<Text text="{products>Reportd By}" />
+						<Label text="Date of Notification"></Label>
+					<Text text="{products>Date of Notification}" />
+						<Label text="Time of Notification"></Label>
+					<Text text="{products>Time of Notification}" />
+				</f:content>
+		</f:SimpleForm>
+			</IconTabFilter>
+			<IconTabFilter
+				icon="sap-icon://crm-service-manager"
+					text="Breakdown"
+				count="12">
+				<content>
+						<CheckBox id="Indicator" text="BreakDown Indicator"></CheckBox>
+							<f:SimpleForm 
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+				labelSpanL="4"
+		labelSpanM="4"
+			singleContainerFullSize="false" 
+			binding="{/sample}"
+			>
+					<f:content  id="ls_11" binding="{/sample}">
+				<Label text="Start of Malfunction(Date)"></Label>
+			<Text text="{
+				path: '/date',
+				type: ' sap.ui.model.odata.type.Date ',
+				formatOptions: {
+					style: 'short'
+				}
+			}" />
+						<Label text="Start of Malfunction(Time)"></Label>
+				<Text text="{
+				path: '/time',
+				type: 'sap.ui.model.odata.type.Time',
+				formatOptions: {
+					relative: true,
+					relativeScale: 'auto'
+				}
+			}" />
+						<Label text="End of Malfunction(Date)"></Label>
+					<Text text="{
+				path: '/date',
+				type: ' sap.ui.model.odata.type.Date ',
+				formatOptions: {
+					style: 'short'
+				}
+			}" />
+						<Label text="End of Malfunction(Time)"></Label>
+					<Text text="{}" />
+						<Label text="Breakdown Duration"></Label>
+					<Text text="{}" />
+						<Label text="Unit for breakdown duration"></Label>
+					<Text text="{}" />
+						
+				</f:content>
+		</f:SimpleForm>
+				</content>
+			</IconTabFilter>
+				<IconTabFilter
+				icon="sap-icon://action"
+					text="Damage"
+				count="12">
+				<Text text="Notes go here ..." />
+			</IconTabFilter>
+		
+		</items>
+						
+	</IconTabBar>
+
+							
+			</content>
+			<footer>
+			<Bar>
+				<!--<contentLeft> -->
+				<!--	<Button id="Approveq" text="Filter" type="Accept" press="handleSavePress" />-->
+				<!--		<Button id="Approved" text="Filter" type="Accept" press="handleSavePress" />-->
+				<!--</contentLeft>-->
+					
+				<contentRight>
+					<Button id="Edit" text="Edit" type="Accept" press="handleSavePress" />
+					<Button id="Save" text="Save" type="Emphasized" press="handleFowardPress" />
+					
+				</contentRight>
+			</Bar>
+		</footer>
+			</Page>
+			</detailPages>
+			
+		<masterPages>
+			
+			<Page id="master" title="Master 1" icon="sap-icon://action" class="sapUiStdPage">
+				<content>
+				<SearchField id="id_search" liveChange="onSearch"/>
+					<List id="id_pro" items="{products>/Products}">
+						<items>
+							<ObjectListItem press="onItemSelected" title="{products>ProductName}" number="{products>UnitPrice}"
+								numberState="{= ${products>UnitPrice} > 10 ? 'Error' : 'Success'}" type="Active">
+								<attributes>
+									<ObjectAttribute text="{products>QuantityPerUnit}"/>
+								</attributes>
+								<firstStatus>
+									<ObjectStatus text="{products>Status}" state="{ path : 'products>Status', formatter : '.formatter.status' }"></ObjectStatus>
+								</firstStatus>
+							</ObjectListItem>
+						</items>
+					</List>
+			<!--	<Label text="Employee Name:"></Label>
+				<Input placeholder="Enter employee name" width="200px" ></Input>
+				<Label text="Designation:"></Label>
+				<Input placeholder="Enter Designation" width="200px"></Input>    
+				-->
+				</content>
+			</Page>
+			
+		</masterPages>
+	</SplitApp>
+	
+</mvc:View>
